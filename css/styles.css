@@ -464,7 +464,7 @@ img {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: opacity var(--animation-transition), visibility var(--animation-transition);
+    transition: opacity var(--transitions-anime), visibility var(--transitions-anime);
     background: rgba(0, 0, 0, 0.2);
     z-index: 5;
 }
@@ -533,6 +533,7 @@ img {
   }
 
 .input-form-modal {
+    display: block;
     padding-top: 11px;
     padding-right: 12px;
     padding-bottom: 11px;
@@ -540,24 +541,26 @@ img {
     width: 100%;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    transition: border var(--animation-transition);
+    transition: border var(--transitions-anime);
 }
+
+.input-form-modal:focus {
+    border: 1px solid #2196F3;
+    outline: 0;
+    outline-offset: 0;
+    
+}
+
+.input-form-modal:focus ~ .svg-modal-form {
+    fill: var(--hover-focus);
+}
+  
+
+
 .input-form-modal:not(:last-child) {
     padding-left: 42px;
 }
 
-
-.input-form-modal {
-    display: block;
-    padding-left: 42px;
-} 
-
-.input-form-modal:focus {
-    border: 1px solid #2196f3;
-  }
-  .input-form-modal:focus ~ .svg-modal-form {
-    fill: var(--hover-focus);
-  }
 
 
 .svg-modal-form {
@@ -569,9 +572,13 @@ img {
 }
 
 
+
+
+
 .form-field {
     position: relative;
     margin-bottom: 10px;
+    /* border: 1px solid red; */
 }
 
 .svg-modal-form {
@@ -607,7 +614,7 @@ img {
     border: 2px solid #212121;
     border-radius: 4px;
     margin-right: 7px;
-    transition: border-color var(--animation-transition), background-color var(--transitions-anime),
+    transition: border-color var(--transitions-anime), background-color var(--transitions-anime),
         background-image var(--transitions-anime);
 }
 
